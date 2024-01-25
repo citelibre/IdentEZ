@@ -2,7 +2,7 @@ version: '3.5'
 
 services:
     db:
-        image: citelibre/ident_ez:db-1.0.0
+        image: citelibre/ident_ez:db-1.0.9
         container_name: ident_ez_db
         ports:
             - "3307:3306"
@@ -12,7 +12,7 @@ services:
 
 
     solr:
-        image: citelibre/ident_ez:solr-1.0.0
+        image: citelibre/ident_ez:solr-1.0.9
         container_name: ident_ez_solr
         command: -force
         depends_on:
@@ -25,14 +25,14 @@ services:
 
 
     fake-smtp:
-        image: citelibre/ident_ez:fake-smtp-1.0.0
+        image: citelibre/ident_ez:fake-smtp-1.0.9
         container_name: ident_ez_fake-smtp
         ports:
             - "1080:1080"
             - "25:25"
 
     matomo:
-        image: citelibre/ident_ez:matomo-1.0.0
+        image: citelibre/ident_ez:matomo-1.0.9
         container_name: ident_ez_matomo
         ports:
             - "80:80"
@@ -40,7 +40,7 @@ services:
             - solr
 
     keycloak:
-        image: citelibre/ident_ez:keycloak-1.0.0
+        image: citelibre/ident_ez:keycloak-1.0.9
         container_name: ident_ez_keycloak
         ports:
             - "8081:8081"
@@ -50,7 +50,7 @@ services:
 
 
     citelibre:
-        image: citelibre/ident_ez:ihm-1.0.0
+        image: citelibre/ident_ez:ihm-1.0.9
         container_name: ident_ez_citelibre
         ports:
             - 8080:8080
