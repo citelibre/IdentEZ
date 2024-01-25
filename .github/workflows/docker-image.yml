@@ -44,10 +44,10 @@ jobs:
       run:  echo "WAR_NAME=$(cd citelibre-identEZ/target; ls *.war|sed -e 's/\.war//g')" >> $GITHUB_ENV
       
     - name: build identEZ
-      run: docker build citelibre-identEZ --build-arg site=$WAR_NAME -t citelibre/service_ez:ihm-$VERSION
+      run: docker build citelibre-identEZ --build-arg site=$WAR_NAME -t citelibre/ident_ez:ihm-$VERSION
     
     - name: build identEZ  
-      run: docker save -o citelibre-identEZ.tar citelibre/service_ez:ihm-$VERSION
+      run: docker save -o citelibre-identEZ.tar citelibre/ident_ez:ihm-$VERSION
       
     - name: Run Trivy vulnerability scanner in tarball mode of identEZ image
       uses: aquasecurity/trivy-action@master
@@ -63,29 +63,28 @@ jobs:
         sarif_file: 'trivy-results.sarif'
       
     - name: build fakesmtp
-      run: docker build fake-smtp -t citelibre/service_ez:fake-smtp-$VERSION
+      run: docker build fake-smtp -t citelibre/ident_ez:fake-smtp-$VERSION
       
     - name: build mysql
-      run: docker build mysql -t citelibre/service_ez:db-$VERSION
-      
+      run: docker build mysql -t citelibre/ident_ez:db-$VERSION
       
     - name: build matomo
-      run: docker build matomo -t citelibre/service_ez:matomo-$VERSION
+      run: docker build matomo -t citelibre/ident_ez:matomo-$VERSION
       
     - name: build solr
-      run: docker build solr -t citelibre/service_ez:solr-$VERSION
+      run: docker build solr -t citelibre/ident_ez:solr-$VERSION
       
     - name: build keycloak
-      run: docker build keycloak -t citelibre/service_ez:keycloak-$VERSION
+      run: docker build keycloak -t citelibre/ident_ez:keycloak-$VERSION
       
     - name: push images on docker hub
       run: |
-        docker push citelibre/service_ez:solr-$VERSION
-        docker push citelibre/service_ez:db-$VERSION
-        docker push citelibre/service_ez:matomo-$VERSION
-        docker push citelibre/service_ez:fake-smtp-$VERSION
-        docker push citelibre/service_ez:keycloak-$VERSION
-        docker push citelibre/service_ez:ihm-$VERSION
+        docker push citelibre/ident_ez:solr-$VERSION
+        docker push citelibre/ident_ez:db-$VERSION
+        docker push citelibre/ident_ez:matomo-$VERSION
+        docker push citelibre/ident_ez:fake-smtp-$VERSION
+        docker push citelibre/ident_ez:keycloak-$VERSION
+        docker push citelibre/ident_ez:ihm-$VERSION
       
     - name: update docker compose
       run: |  
