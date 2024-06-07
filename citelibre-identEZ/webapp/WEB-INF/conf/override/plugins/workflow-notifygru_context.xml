@@ -60,10 +60,10 @@
     <bean id="workflow-notifygru.lib-notifygru.apiManagerTransport"
         class="fr.paris.lutece.plugins.librarynotifygru.rs.service.NotificationTransportApiManagerRest">
         <property name="notificationEndPoint">
-            <value>http://localhost:8080/serviceEZ/rest/grusupply/notification</value>
+            <value>http://localhost:8080/identEZ/rest/grusupply/notification</value>
         </property>
         <property name="apiManagerEndPoint">
-            <value>http://localhost:8080/serviceEZ/rest/api/token</value>
+            <value>http://localhost:8080/identEZ/rest/api/token</value>
         </property>
         <property name="apiManagerCredentials">
             <value>tobecompleted</value>
@@ -72,7 +72,7 @@
     <bean id="workflow-notifygru.lib-notifygru.restTransport"
         class="fr.paris.lutece.plugins.librarynotifygru.rs.service.NotificationTransportRest">
         <property name="notificationEndPoint">
-            <value>hhttp://localhost:8080/serviceEZ/rest/grusupply/notification</value>
+            <value>hhttp://localhost:8080/identEZ/rest/grusupply/notification</value>
         </property>
     </bean>
     <bean id="workflow-notifygru.lib-notifygru.notificationService"
