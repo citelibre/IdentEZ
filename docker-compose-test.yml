@@ -111,5 +111,5 @@ services:
 
 volumes:
   elasticsearch-data:
-  rendezvous-data:
+  identEZ-data:
     #  solr-data:
