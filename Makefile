@@ -1,7 +1,7 @@
 VERSION=1.0.9
 
 REPO=citelibre/identEZ
-REPO-TEST=test-identEZ
+REPO-TEST=test-identez
 NAME_SERVICE=identEZ
 
 build: ## Build the containers
