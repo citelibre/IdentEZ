@@ -55,10 +55,10 @@ jobs:
       run: cd citelibre-identEZ
       
     - name: build identEZ
-      run: docker build  citelibre-identEZ -t citelibre/identEZ:ihm-$VERSION
+      run: docker build  citelibre-identEZ -t citelibre/ident_ez:ihm-$VERSION
     
     - name: Save identEZ
-      run: docker save -o citelibre-identEZ.tar citelibre/identEZ:ihm-$VERSION
+      run: docker save -o citelibre-identEZ.tar citelibre/ident_ez:ihm-$VERSION
       
     - name: Run Trivy vulnerability scanner in tarball mode of rendez vous image
       uses: aquasecurity/trivy-action@master
@@ -74,29 +74,29 @@ jobs:
         sarif_file: 'trivy-results.sarif'
       
     - name: build mysql
-      run: docker build  mysql -t citelibre/identEZ:db-$VERSION
+      run: docker build  mysql -t citelibre/ident_ez:db-$VERSION
       
     - name: build matomo
-      run: docker build  matomo -t citelibre/identEZ:matomo-$VERSION
+      run: docker build  matomo -t citelibre/ident_ez:matomo-$VERSION
       
     - name: build solr
-      run: docker build  solr -t citelibre/identEZ:solr-$VERSION
+      run: docker build  solr -t citelibre/ident_ez:solr-$VERSION
       
     - name: build keycloak
-      run: docker build  keycloak -t citelibre/identEZ:keycloak-$VERSION
+      run: docker build  keycloak -t citelibre/ident_ez:keycloak-$VERSION
 
     - name: build kibana
-      run: docker build  kibana -t citelibre/identEZ:kibana-$VERSION
+      run: docker build  kibana -t citelibre/ident_ez:kibana-$VERSION
 
     - name: build elasticsearch
-      run: docker build  elasticsearch -t citelibre/identEZ:elasticsearch-$VERSION
+      run: docker build  elasticsearch -t citelibre/ident_ez:elasticsearch-$VERSION
       
     - name: push images on docker hub
       run: |
-        docker push citelibre/identEZ:solr-$VERSION
-        docker push citelibre/identEZ:db-$VERSION
-        docker push citelibre/identEZ:matomo-$VERSION
-        docker push citelibre/identEZ:keycloak-$VERSION
-        docker push citelibre/identEZ:ihm-$VERSION
-        docker push citelibre/identEZ:kibana-$VERSION
-        docker push citelibre/identEZ:elasticsearch-$VERSION
+        docker push citelibre/ident_ez:solr-$VERSION
+        docker push citelibre/ident_ez:db-$VERSION
+        docker push citelibre/ident_ez:matomo-$VERSION
+        docker push citelibre/ident_ez:keycloak-$VERSION
+        docker push citelibre/ident_ez:ihm-$VERSION
+        docker push citelibre/ident_ez:kibana-$VERSION
+        docker push citelibre/ident_ez:elasticsearch-$VERSION
