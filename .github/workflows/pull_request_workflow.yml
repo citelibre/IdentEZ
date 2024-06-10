@@ -65,22 +65,22 @@ jobs:
       run: cd citelibre-identEZ
       
     - name: build identEZ
-      run: docker build  citelibre-identEZ -t citelibre/identEZ:ihm-$VERSION
+      run: docker build  citelibre-identEZ -t citelibre/ident_ez:ihm-$VERSION
       
     - name: build mysql
-      run: docker build  mysql -t citelibre/identEZ:db-$VERSION
+      run: docker build  mysql -t citelibre/ident_ez:db-$VERSION
       
     - name: build matomo
-      run: docker build  matomo -t citelibre/identEZ:matomo-$VERSION
+      run: docker build  matomo -t citelibre/ident_ez:matomo-$VERSION
       
     - name: build solr
-      run: docker build  solr -t citelibre/identEZ:solr-$VERSION
+      run: docker build  solr -t citelibre/ident_ez:solr-$VERSION
       
     - name: build keycloak
-      run: docker build  keycloak -t citelibre/identEZ:keycloak-$VERSION
+      run: docker build  keycloak -t citelibre/ident_ez:keycloak-$VERSION
 
     - name: build kibana
-      run: docker build  kibana -t citelibre/identEZ:kibana-$VERSION
+      run: docker build  kibana -t citelibre/ident_ez:kibana-$VERSION
 
     - name: build elasticsearch
-      run: docker build  elasticsearch -t citelibre/identEZ:elasticsearch-$VERSION
+      run: docker build  elasticsearch -t citelibre/ident_ez:elasticsearch-$VERSION
