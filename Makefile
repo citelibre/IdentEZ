@@ -1,6 +1,6 @@
 VERSION=1.0.9
 
-REPO=citelibre/identEZ
+REPO=citelibre/ident_ez
 REPO-TEST=test-identez
 NAME_SERVICE=identEZ
 
