@@ -5,14 +5,21 @@ REPO-TEST=test-identez
 NAME_SERVICE=identEZ
 
 build: ## Build the containers
-	docker build $(NAME_SERVICE)_citelibre -t $(REPO):ihm
-	docker build $(NAME_SERVICE)_citelibre -t $(REPO):ihm-$(VERSION)
-	docker build $(NAME_SERVICE)_matomo -t $(REPO):matomo
-	docker build $(NAME_SERVICE)_matomo -t $(REPO):matomo-$(VERSION)
-	docker build $(NAME_SERVICE)_solr -t $(REPO):solr
-	docker build $(NAME_SERVICE)_solr -t $(REPO):solr-$(VERSION)
-	docker build $(NAME_SERVICE)_mysql -t $(REPO):db
-	docker build $(NAME_SERVICE)_mysql -t $(REPO):db-$(VERSION)
+	docker build citelibre-identEZ -t $(REPO):ihm
+	docker build citelibre-identEZ -t $(REPO):ihm-$(VERSION)
+	docker build matomo -t $(REPO):matomo
+	docker build matomo -t $(REPO):matomo-$(VERSION)
+	docker build solr -t $(REPO):solr
+	docker build solr -t $(REPO):solr-$(VERSION)
+	docker build mysql -t $(REPO):db
+	docker build mysql -t $(REPO):db-$(VERSION)
+	docker build keycloak -t $(REPO):keycloak
+	docker build keycloak -t $(REPO):keycloak-$(VERSION)
+	docker build kibana -t $(REPO):kibana
+	docker build kibana -t $(REPO):kibana-$(VERSION)
+	docker build elasticsearch -t $(REPO):elasticsearch
+	docker build elasticsearch -t $(REPO):elasticsearch-$(VERSION)
+
 
 test: ## Build the containers
 	docker build -t $(REPO-TEST)/ihm citelibre-identEZ
