@@ -23,7 +23,7 @@ COPY haproxy.cfg /etc/haproxy/haproxy.cfg
 
 RUN cd webapps && mkdir identEZ &&  mv ${site}.war identEZ/identEZ.war  && cd identEZ && jar xvf identEZ.war && rm identEZ.war
 
-COPY webapp/. webapps/identEZ/.
+# COPY webapp/. webapps/identEZ/.
 
 COPY entrypoint.sh /entrypoint.sh
 
